@@ -7,7 +7,14 @@
     </header>
 
     {{ .Content }}
-
+    <div class="other_posts">
+      {{ if $.PrevInSection }}
+      <a href="{{.PrevInSection.Permalink}}" class="prev">{{ .PrevInSection.LinkTitle }}</a>
+      {{ end }}
+      {{ if $.NextInSection }}
+      <a href="{{.NextInSection.Permalink}}" class="next">{{ .NextInSection.LinkTitle }}</a>
+      {{ end }}
+    </div>
   </article>
 
 {{ partial "bottom.html" . }}
